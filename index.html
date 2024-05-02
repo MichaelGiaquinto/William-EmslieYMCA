@@ -1,46 +1,234 @@
 <html>
     <head>
-        <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
 
-        <!-- include ar.js for A-Frame -->
-        <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1.4.0/dist/aframe-master.min.js"></script>
+
+        <script src="libraries/aframe-ar.js"></script>
 
     </head>
     <body>
         <a-scene embedded arjs>
 
-<!--
-            assets are the objects that can be included or linked into your code
-            in this example, this includes an obj file and a material mapped file
-            notice that "src" is a way to direct the path to the file - the obj and mtl file is within the assets folder
+            <!--
+assets are the objects that can be included or linked into your code
+in this example, this includes an obj file and a material mapped file
+notice that "src" is a way to direct the path to the file - the obj and mtl file is within the assets folder
 -->
-            <a-assets>
-                <a-asset-item id="WE YMCA5-obj" src="assets/WE YMCA5.obj"></a-asset-item>
-                <a-asset-item id= "WE YMCA5-mtl" src="assets/WE YMCA5.mtl"></a-asset-item>
-            
+            <a-assets timeout="10000">
+
+
+                <a-asset-item id="William Emslie Main Model-obj" 
+                              src="assets/William Emslie Main Model.obj"></a-asset-item>
+                <a-asset-item id="William Emslie Main Model-mtl" src="assets/William Emslie Main Model.mtl"></a-asset-item>
+
+                <a-asset-item id="michiganAve-obj" 
+                              src="assets/michiganAve.obj"></a-asset-item>
+                <a-asset-item id="michiganAve-mtl" src="assets/michiganAve.mtl"></a-asset-item>
+
+                <a-asset-item id="treesTrees-obj" src="assets/treesTrees.obj"></a-asset-item>
+
+
+                <a-asset-item id="buildings-obj" src="assets/buildings.obj"></a-asset-item>
+                <a-asset-item id="buildings-mtl" src="assets/buildings.mtl"></a-asset-item>
+
+                <a-asset-item id="sidewalk-obj" src="assets/sidewalk.obj"></a-asset-item>
+                <a-asset-item id="sidewalk-mtl" src="assets/sidewalk.mtl"></a-asset-item>
+
+
             </a-assets>
 
-<!--
-      the entity is where you start linking in your assets
+
+
+            <!--
+<a-marker id="kellyGardens_01"
+type="pattern"
+url="patt/pattern-kellyGardensMarker_01.patt"
+>
+
+<a-entity scale=".5 .5 .5"
+obj-model="obj: #model-obj; mtl: #model-mtl"
+rotation="0 0 0"
+animation="property: material.opacity; from: 0.35; to 0.95; loop: true; dir: alternate; dur: 1000"
+>
+
+
+</a-entity>
+
+</a-marker>
+-->
+
+            -------------------------------------------------------------------
+            // WE ABOVE MICHIGAN
+
+            <a-marker id="pattern-07"
+                      type="pattern"
+                      url="patt/pattern-07.patt"
+                      >
+
+
+                <a-entity 
+                          obj-model="obj: #William Emslie Main Model-obj; mtl: #William Emslie Main Model-mtl"
+                          scale=".005 .005 .005"
+                          position= "0 0 0"     
+                          rotation = "-90 90 0"></a-entity>
+
+                <a-entity obj-model="obj: #michiganAve-obj; mtl: #michiganAve-obj"
+                          scale=".005 .005 .005"
+                          position= "-0.2 1 1.15"   
+                          rotation = "-90 -90 0"></a-entity>
+
+
+                <a-entity obj-model="obj: #treesTrees-obj; mtl: #treesTrees-mtl"
+                          scale=".005 .005 .005"
+                          position= "0 0 0"     
+                          rotation = "-90 90 0"></a-entity>
+
+                <a-entity obj-model="obj: #buildings-obj; mtl: #buildings-mtl"
+                          scale=".005 .005 .005"
+                          position= "0 0 0"   
+                          rotation = "-90 90 0"></a-entity>
+
+                <a-entity obj-model="obj: #sidewalk-obj; mtl: #sidewalk-obj"
+                          scale=".005 .005 .005"
+                          position= "0 0 0"   
+                          rotation = "-90 90 0"></a-entity>
+
+
+
+
+
+            </a-marker> 
+            -------------------------------------------------------------------
+            <a-marker id="pattern-06"
+                      type="pattern"
+                      url="patt/pattern-06.patt"
+                      >
+
+                <a-entity scale=".65 .65 .65"
+                          obj-model="obj: #model2-obj; mtl: #model2-mtl"
+                          model-opacity="1">
+
+                    <a-animation attribute="model-opacity"
+                                 dur: 10000;
+                                 from="1"
+                                 to="0"
+                                 repeat="indefinite">
+                    </a-animation>
+
+
+
+                </a-entity>
+
+                <a-entity scale=".65 .65 .65"
+                          obj-model="obj: #tree2-obj; mtl: #tree2-mtl"
+                          model-opacity="1">
+
+                    <a-animation attribute="model-opacity"
+                                 dur: 10000;
+                                 from="1"
+                                 to="0"
+                                 repeat="indefinite">
+                    </a-animation>
+
+
+
+                </a-entity>
+
+                <a-entity scale=".65 .65 .65"
+                          obj-model="obj: #sidewalk2-obj; mtl: #sidewalk2-mtl"
+                          model-opacity="1">
+
+                    <a-animation attribute="model-opacity"
+                                 dur: 10000;
+                                 from="1"
+                                 to="0"
+                                 repeat="indefinite">
+                    </a-animation>
+
+
+
+                </a-entity>
+
+            </a-marker> 
+
+
+
+
+            -------------------------------------------------------------------
+            <a-marker id="pattern-05"
+                      type="pattern"
+                      url="patt/pattern-05.patt"
+                      >
+
+                <a-entity scale=".65 .65 .65"
+                          obj-model="obj: #model3-obj; mtl: #model3-mtl"
+                          model-opacity="1">
+
+                    <a-animation attribute="model-opacity"
+                                 dur: 10000;
+                                 from="1"
+                                 to="0"
+                                 repeat="indefinite">
+                    </a-animation>
+
+
+
+                </a-entity>
+
+                <a-entity scale=".65 .65 .65"
+                          obj-model="obj: #tree3-obj; mtl: #tree3-mtl"
+                          model-opacity="1">
+
+                    <a-animation attribute="model-opacity"
+                                 dur: 10000;
+                                 from="1"
+                                 to="0"
+                                 repeat="indefinite">
+                    </a-animation>
+
+
+
+                </a-entity>
+
+                <a-entity scale=".65 .65 .65"
+                          obj-model="obj: #sidewalk3-obj; mtl: #sidewalk3-mtl"
+                          model-opacity="1">
+
+                    <a-animation attribute="model-opacity"
+                                 dur: 10000;
+                                 from="1"
+                                 to="0"
+                                 repeat="indefinite">
+                    </a-animation>
+
+
+
+                </a-entity>
+
+            </a-marker> 
+            -------------------------------------------------------------------            <!--
+the entity is where you start linking in your assets
 note, you don't necessarily need to separate out your assets, you can lump it all in entity below
 however, sometimes, it's easier to organize your code by first thinking about all the assets you need, and then calling them when you need
 -->
+            <!--
+<a-entity scale=".5 .5 .5"
+obj-model="obj: #model-obj; mtl: #model-mtl" rotation="0 0 0"></a-entity>
+-->
 
-                                                                          
-            <a-entity scale="0.2 0.2 0.2"
-                      obj-model="obj: #WE YMCA5-obj; mtl: #WE YMCA5-mtl" rotation="0 0 0"></a-entity>
-            <a-box material='opacity: 0.9;' color="#4CC3D9"></a-box>
+            <a-box material='opacity: 0.5;' color="#4CC3D9"></a-box>
 
 
-<a-entity position='1 1 1' scale="0.2 0.2 0.2"
-          obj-model="obj: #WE YMCA5-obj; mtl: #WE YMCA5" rotation = "0 0 0"></a-entity>
-            
-            <a-entity position='1 1 1' scale="0.2 0.2 0.2"
-          obj-model="obj: #WE YMCA5-mtl; mtl: #WE YMCA5" rotation = "0 0 0"></a-entity>
-            
-            
+
+
+
             <!-- define a camera which will move according to the marker position -->
-            <a-marker-camera preset='hiro'></a-marker-camera>      
+            <a-marker-camera preset='hiro'></a-marker-camera>
+            <!--             <a-marker-camera preset='Custom' type='pattern' url='/assets/FigureGround.patt'></a-marker-camera>  <a-entity camera></a-entity>-->
         </a-scene>
+
+
+
+
     </body>
 </html>
